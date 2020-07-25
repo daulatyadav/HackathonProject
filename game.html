@@ -4,15 +4,19 @@
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Document</title>
-      <script src="style.css"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">      <script src="style.css"></script>
       <style>
+        #some_div{
+            font-size: 120px;
+            margin-left: 5%;
+        }
         .grid-container {
             display: grid;
             grid-template-columns: auto auto auto auto;
-            padding: 10px;
-            margin-top: 10%;
             padding-left: 20%;
             padding-right: 20%;
+            height: 180px;
+            text-align: center;
         }
         .grid-item {
             background-color: rgba(255, 255, 255, 0.8);
@@ -21,20 +25,99 @@
             font-size: 30px;
             text-align: center;
             width: 50%;
-            height: 200%;
+            height: auto;
             background-color: #bbb;
             border-radius: 50%;
             display: inline-block;
             
         }
+        .dot {
+        height: 25px;
+        width: 25px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        }
+        i{
+            color: red;
+        }
+
       </style>
   </head>
   <body>
-    <div class="grid-container">
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item"></div> 
-        <div class="grid-item"></div>  
+    
+    <!-- <div style="float: right;">
+
+    </div> -->
+    <div class="icon" style="float: Right;margin-right: 5%;">
+        <i class="fa fa-heart" aria-hidden="true"></i>
+        <i class="fa fa-heart" aria-hidden="true"></i>
+        <i class="fa fa-heart" aria-hidden="true"></i>
+    </div>
+    <div id="some_div" style="text-align: center;height: 150px;"></div>
+    
+    <div class="div">
+        <div class="grid-container">
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div> 
+            <div class="grid-item"></div>  
+          </div>
+    </div>
+   
+      <div style="text-align:center; margin-top: 5%;">
+        <p>
+            Choose Color From here
+        </p>
+        <span class="dot" style="background: red;" onclick="startGame(red)"></span>
+        <span class="dot" style="background: green;" onclick="startGame(green)"></span>
+        <span class="dot" style="background: blue;" onclick="startGame(blue)"></span>
+        <span class="dot" style="background: orange;" onclick="startGame(orange)"></span>
+        <span class="dot" style="background: gray;" onclick="startGame(gray)"></span>
+        <span class="dot" style="background: pink;" onclick="startGame(pink)"></span>
       </div>
+    </div>
+        <button class="button startGameButton"  style="font-family: Brush Script MT;border-radius: 2px;background-color: #4CAF50;
+        border: none;color: white;text-align: center;  font-size: xx-large;" onclick="startGame()">Start Game</button>
+    
   </body>
+  <script>
+
+
+function startGame() {
+
+    var timeLeft = 4;
+
+        var elem = document.getElementById('some_div');
+        var timerId = setInterval(countdown, 1000);
+
+        function countdown() {
+            if (timeLeft == -1) {
+                clearTimeout(timerId);
+                doSomething();
+            } else {
+                elem.innerHTML = timeLeft +" Sec"
+                
+                timeLeft--;
+            }
+        }
+
+
+    var colors = ['red', 'green', 'blue', 'orange', 'gray','pink'];
+    
+    function getRandomInt(max) {
+        return Math.floor(Math.random() * Math.floor(max));
+    }
+    console.log(getRandomInt(6));
+
+ 
+
+    document.body.children[2].children[0].children[0].style.backgroundColor = colors[4];
+    document.body.children[2].children[0].children[1].style.backgroundColor = "blue";
+    document.body.children[2].children[0].children[2].style.backgroundColor = "green";
+    document.body.children[2].children[0].children[3].style.backgroundColor = "pink";
+    
+
+}
+  </script>
   </html>
