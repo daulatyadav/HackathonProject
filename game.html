@@ -6,6 +6,19 @@
       <title>Document</title>
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">      <script src="style.css"></script>
       <style>
+               body {
+                margin: 0px;
+        padding:10%px;
+        box-sizing: border-box;
+
+        width: 100%;
+        height: 100vh;
+        color: #fff;
+        background-size: 400% 400%;
+        background: linear-gradient(to bottom, #f5f7fa 0%, #c3cfe2 100%);
+        position: relative;
+        animation: change 10s ease-in-out infinite;
+    }
         #some_div{
             font-size: 120px;
         }
@@ -41,6 +54,64 @@
             color: red;
         }
 
+
+        .grid-item:hover {
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
+}
+.dot:hover {
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+/* .grid-item {
+  animation: rotation 2s infinite linear;
+} */
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+@media only screen and (max-width: 600px) {
+  .grid-container {
+    padding: 0px;
+    margin-left: 1%;
+  }
+  .grid-item{
+    height: 50%;
+    width: 40%;
+  }
+  #some_div{
+    margin-top: 10%;
+    text-align: center;
+    height: 99px;
+    color: #4CAF50;
+    font-size: 50px;
+  }
+}
+
+#myScore{
+    background: transparent;
+    border: none;
+}
+
       </style>
   </head>
   <body>
@@ -48,15 +119,15 @@
     <!-- <div style="float: right;">
 
     </div> -->
-    <b>Score:</b> <input type="text" id="myScore" value="0">
-     <div class="icon" style="float: Right;margin-right: 1%;"><b> Health: </b>
+    <b style="color: #4CAF50;">Score:</b> <input type="text" id="myScore" value="0">
+     <div class="icon" style="float: Right;margin-right: 1%;"><b style="color: #4CAF50;"> Health: </b>
         <i class="fa fa-heart" aria-hidden="true" id="heart1"></i>
         <i class="fa fa-heart" aria-hidden="true" id="heart2"></i>
         <i class="fa fa-heart" aria-hidden="true" id="heart3"></i>
     </div>
-    <div id="some_div" style="text-align: center;height: 150px;">Timer</div>
+    <div id="some_div" style="text-align: center;height: 150px;color: #4CAF50;"><span style="font-family: Monaco;color: #4CAF50;">Timer</span></div>
     
-    <div class="div">
+    <div class="gridDiv">
         <div class="grid-container">
             <div class="grid-item" onclick="fillColor(1)" ></div>
             <div class="grid-item"  onclick="fillColor(2)" ></div>
@@ -65,9 +136,9 @@
           </div>
     </div>
    
-      <div style="text-align:center; margin-top: 5%;">
-        <p>
-            Choose Color From here
+      <div style="text-align:center; margin-top: 3%; color: #4CAF50;">
+        <p style="font-family: Brush Script MT;font-size: xx-large;" >
+            <b>Choose Color From below</b>
         </p>
         <span class="dot" style="background: red;" onclick="pickColor('red')"></span>
         <span class="dot" style="background: green;" onclick="pickColor('green')"></span>
@@ -77,10 +148,13 @@
         <span class="dot" style="background: pink;" onclick="pickColor('pink')"></span>
       </div>
     </div>
+    <div class="gameButton" style="text-align: center;margin-top: 2%;">
         <button class="button startGameButton"  style="font-family: Brush Script MT;border-radius: 2px;background-color: #4CAF50;
-        border: none;color: white;text-align: center;  font-size: xx-large;" onclick="startGame()">Start Game</button>
+        border: none;color: white;text-align: center;  font-size: xx-large;margin-right: 2%;" onclick="startGame()">Start Game</button>
     <button class="button startGameButton"  style="font-family: Brush Script MT;border-radius: 2px;background-color: #4CAF50;
     border: none;color: white;text-align: center;  font-size: xx-large;" onclick="checkFunction()">Check</button>
+    </div>
+        
   </body>
   <script>
     var looseCount = 1
@@ -92,11 +166,11 @@
     var pointArr=[];
     function fillColor(val){
     console.log("fill color is workin",val,pickColorValue)
-    document.body.children[3].children[0].children[val-1].style.backgroundColor = pickColorValue;
+    document.body.children[4].children[0].children[val-1].style.backgroundColor = pickColorValue;
     fillArr[val-1] = pickColorValue
     }
     function pickColor(color){
-        //document.body.children[3].children[0].children[0].style.backgroundColor = ;
+        //document.body.children[4].children[0].children[0].style.backgroundColor = ;
         pickColorValue = color;
         console.log("pick color value",pickColorValue)
         
@@ -134,20 +208,20 @@
             if(looseCount === 1){
                 document.getElementById('heart1').style.color="black";   
                 looseCount ++
-                document.body.children[3].children[0].children[0].style.backgroundColor = "gray"
-            document.body.children[3].children[0].children[1].style.backgroundColor = "gray"
-            document.body.children[3].children[0].children[2].style.backgroundColor = "gray"
-            document.body.children[3].children[0].children[3].style.backgroundColor = "gray"
+                document.body.children[4].children[0].children[0].style.backgroundColor = "smokegray"
+            document.body.children[4].children[0].children[1].style.backgroundColor = "smokegray"
+            document.body.children[4].children[0].children[2].style.backgroundColor = "smokegray"
+            document.body.children[4].children[0].children[3].style.backgroundColor = "smokegray"
             alert("Wrong Paint")
 
             }else if(looseCount === 2){
                 document.getElementById('heart1').style.color="black";   
                 document.getElementById('heart2').style.color="black";   
                 looseCount = 2
-            document.body.children[3].children[0].children[0].style.backgroundColor = "gray"
-            document.body.children[3].children[0].children[1].style.backgroundColor = "gray"
-            document.body.children[3].children[0].children[2].style.backgroundColor = "gray"
-            document.body.children[3].children[0].children[3].style.backgroundColor = "gray"
+            document.body.children[4].children[0].children[0].style.backgroundColor = "smokegray"
+            document.body.children[4].children[0].children[1].style.backgroundColor = "smokegray"
+            document.body.children[4].children[0].children[2].style.backgroundColor = "smokegray"
+            document.body.children[4].children[0].children[3].style.backgroundColor = "smokegray"
             looseCount ++
 
             alert("Wrong Paint")
@@ -156,10 +230,10 @@
                 document.getElementById('heart2').style.color="black";   
                 document.getElementById('heart3').style.color="black";   
                 looseCount ++
-            document.body.children[3].children[0].children[0].style.backgroundColor = "gray"
-            document.body.children[3].children[0].children[1].style.backgroundColor = "gray"
-            document.body.children[3].children[0].children[2].style.backgroundColor = "gray"
-            document.body.children[3].children[0].children[3].style.backgroundColor = "gray"
+            document.body.children[4].children[0].children[0].style.backgroundColor = "smokegray"
+            document.body.children[4].children[0].children[1].style.backgroundColor = "smokegray"
+            document.body.children[4].children[0].children[2].style.backgroundColor = "smokegray"
+            document.body.children[4].children[0].children[3].style.backgroundColor = "smokegray"
             alert("Wrong Paint")
             }else{
                 alert("Game Over")
@@ -183,10 +257,10 @@ function startGame() {
         console.log(startColArr)
         return colors[instCheck]
     }
-    document.body.children[3].children[0].children[0].style.backgroundColor = getRandomInt(6)
-    document.body.children[3].children[0].children[1].style.backgroundColor = getRandomInt(6)
-    document.body.children[3].children[0].children[2].style.backgroundColor = getRandomInt(6)
-    document.body.children[3].children[0].children[3].style.backgroundColor = getRandomInt(6)
+    document.body.children[4].children[0].children[0].style.backgroundColor = getRandomInt(6)
+    document.body.children[4].children[0].children[1].style.backgroundColor = getRandomInt(6)
+    document.body.children[4].children[0].children[2].style.backgroundColor = getRandomInt(6)
+    document.body.children[4].children[0].children[3].style.backgroundColor = getRandomInt(6)
             
             if(levelCount===0){
                 timeLeft = 5
@@ -233,10 +307,10 @@ function startGame() {
 
         function doSomething(){
             elem.innerHTML = "Time Over"
-            document.body.children[3].children[0].children[0].style.backgroundColor = "gray"
-            document.body.children[3].children[0].children[1].style.backgroundColor = "gray"
-            document.body.children[3].children[0].children[2].style.backgroundColor = "gray"
-            document.body.children[3].children[0].children[3].style.backgroundColor = "gray"
+            document.body.children[4].children[0].children[0].style.backgroundColor = "gray"
+            document.body.children[4].children[0].children[1].style.backgroundColor = "gray"
+            document.body.children[4].children[0].children[2].style.backgroundColor = "gray"
+            document.body.children[4].children[0].children[3].style.backgroundColor = "gray"
         }
 
 
