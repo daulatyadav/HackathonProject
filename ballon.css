@@ -183,3 +183,51 @@ body{
     z-index: -15;
   }
   
+  @media only screen and (max-width: 600px) {
+    #cloudgroup1a{
+        position: fixed;
+        top: 55px;
+        left: 120px;
+        display: inline-block;
+        height: 90px;
+        width: 90px;
+        border-radius:0%;
+        border-top-left-radius: 150%;
+        border-bottom-right-radius: 50%;
+        background: linear-gradient(5deg, #00aa88,#004589);
+        background-color: #fff;
+         z-index: -10;
+      }
+      
+      #cloudgroup1b{
+        position: fixed;
+        top: 10px;
+        left: 190px;
+        display: inline-block;
+        height: 135px;
+        width: 140px;
+        border-radius:0%;
+        border-top-right-radius: 150%;
+        border-top-left-radius: 80%;
+        background: linear-gradient(5deg, #00aa88,#004589);
+        z-index: -10;
+      }
+      
+      #cloudgroup1c{
+        position: fixed;
+        top: 45px;
+        left: 260px;
+        display: inline-block;
+        height: 100px;
+        width: 110px;
+        border-radius:50%;
+        border-top-right-radius: 150%;
+        border-top-left-radius: 50%;
+        background: linear-gradient(5deg, #00aa88,#004589);
+        z-index: -10;
+      }
+      .roundClass{
+        color: white;
+      }
+      
+}
