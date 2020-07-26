@@ -37,11 +37,11 @@ body {
         
     }
     .dot {
-    height: 25px;
-    width: 25px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
+        height: 25px;
+        width: 25px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
     }
     i{
         color: red;
@@ -49,65 +49,66 @@ body {
 
 
     .grid-item:hover {
-animation: shake 0.5s;
-animation-iteration-count: infinite;
+        animation: shake 0.5s;
+        animation-iteration-count: infinite;
 }
-.dot:hover {
-animation: shake 0.5s;
-animation-iteration-count: infinite;
-}
+    .dot:hover {
+        animation: shake 0.5s;
+        animation-iteration-count: infinite;
+    }
 
 @keyframes shake {
-0% { transform: translate(1px, 1px) rotate(0deg); }
-10% { transform: translate(-1px, -2px) rotate(-1deg); }
-20% { transform: translate(-3px, 0px) rotate(1deg); }
-30% { transform: translate(3px, 2px) rotate(0deg); }
-40% { transform: translate(1px, -1px) rotate(1deg); }
-50% { transform: translate(-1px, 2px) rotate(-1deg); }
-60% { transform: translate(-3px, 1px) rotate(0deg); }
-70% { transform: translate(3px, 1px) rotate(-1deg); }
-80% { transform: translate(-1px, -1px) rotate(1deg); }
-90% { transform: translate(1px, 2px) rotate(0deg); }
-100% { transform: translate(1px, -2px) rotate(-1deg); }
+        0% { transform: translate(1px, 1px) rotate(0deg); }
+        10% { transform: translate(-1px, -2px) rotate(-1deg); }
+        20% { transform: translate(-3px, 0px) rotate(1deg); }
+        30% { transform: translate(3px, 2px) rotate(0deg); }
+        40% { transform: translate(1px, -1px) rotate(1deg); }
+        50% { transform: translate(-1px, 2px) rotate(-1deg); }
+        60% { transform: translate(-3px, 1px) rotate(0deg); }
+        70% { transform: translate(3px, 1px) rotate(-1deg); }
+        80% { transform: translate(-1px, -1px) rotate(1deg); }
+        90% { transform: translate(1px, 2px) rotate(0deg); }
+        100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
 /* .grid-item {
 animation: rotation 2s infinite linear;
 } */
 
-@keyframes rotation {
-from {
-transform: rotate(0deg);
-}
-to {
-transform: rotate(359deg);
-}
-}
+    @keyframes rotation {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(359deg);
+        }
+    }
 @media only screen and (max-width: 600px) {
-.grid-container {
-padding: 0px;
-margin-left: 1%;
-}
-.grid-item{
-height: 50%;
-width: 40%;
-}
-#some_div{
-margin-top: 10%;
-text-align: center;
-height: 99px;
-color: #4CAF50;
-font-size: 50px;
-}
+        .grid-container {
+            padding: 0px;
+            margin-left: 1%;
+        }
+        .grid-item{
+            height: 50%;
+            width: 40%;
+        }
+        #some_div{
+            margin-top: 10%;
+            text-align: center;
+            height: 99px;
+            color: #4CAF50;
+            font-size: 50px;
+        }
 }
 
-#myScore{
-background: transparent;
-border: none;
-}
-#myRound{
-background: transparent;
-border: none;
-}
-input{
-color :white
-}
+        #myScore{
+            background: transparent;
+            border: none;
+        }
+        #myRound{
+            background: transparent;
+            border: none;
+        }
+        input{
+            color :white
+        }
+
