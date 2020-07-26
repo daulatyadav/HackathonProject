@@ -5,118 +5,12 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Document</title>
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">     
-       <script src="style.css"></script>
+    <link rel="stylesheet" href="ballon.css">
+    <link rel="stylesheet" href="game.css">
+
        <script src="game.js"> </script>
       <style>
-       body {
-        margin: 0px;
-        padding:2%;
-        box-sizing: border-box;
-
-        width: 100%;
-        height: 120vh;
-        color: #fff;
-        background-size: 400% 400%;
-        background: linear-gradient(to bottom, #f5f7fa 0%, #c3cfe2 100%);
-        position: relative;
-        animation: change 10s ease-in-out infinite;
-    }
-        #some_div{
-            font-size: 80px;
-        }
-        .grid-container {
-            display: grid;
-            grid-template-columns: auto auto auto auto;
-            padding-left: 20%;
-            padding-right: 20%;
-            height: 180px;
-            text-align: center;
-        }
-        .grid-item {
-            background-color: rgba(255, 255, 255, 0.8);
-            border: 1px solid rgba(0, 0, 0, 0.8);
-            padding: 20px;
-            font-size: 30px;
-            text-align: center;
-            width: 50%;
-            height: auto;
-            background-color: #bbb;
-            border-radius: 50%;
-            display: inline-block;
-            
-        }
-        .dot {
-        height: 25px;
-        width: 25px;
-        background-color: #bbb;
-        border-radius: 50%;
-        display: inline-block;
-        }
-        i{
-            color: red;
-        }
-
-
-        .grid-item:hover {
-  animation: shake 0.5s;
-  animation-iteration-count: infinite;
-}
-.dot:hover {
-  animation: shake 0.5s;
-  animation-iteration-count: infinite;
-}
-
-@keyframes shake {
-  0% { transform: translate(1px, 1px) rotate(0deg); }
-  10% { transform: translate(-1px, -2px) rotate(-1deg); }
-  20% { transform: translate(-3px, 0px) rotate(1deg); }
-  30% { transform: translate(3px, 2px) rotate(0deg); }
-  40% { transform: translate(1px, -1px) rotate(1deg); }
-  50% { transform: translate(-1px, 2px) rotate(-1deg); }
-  60% { transform: translate(-3px, 1px) rotate(0deg); }
-  70% { transform: translate(3px, 1px) rotate(-1deg); }
-  80% { transform: translate(-1px, -1px) rotate(1deg); }
-  90% { transform: translate(1px, 2px) rotate(0deg); }
-  100% { transform: translate(1px, -2px) rotate(-1deg); }
-}
-/* .grid-item {
-  animation: rotation 2s infinite linear;
-} */
-
-@keyframes rotation {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(359deg);
-  }
-}
-@media only screen and (max-width: 600px) {
-  .grid-container {
-    padding: 0px;
-    margin-left: 1%;
-  }
-  .grid-item{
-    height: 50%;
-    width: 40%;
-  }
-  #some_div{
-    margin-top: 10%;
-    text-align: center;
-    height: 99px;
-    color: #4CAF50;
-    font-size: 50px;
-  }
-}
-
- #myScore{
-    background: transparent;
-    border: none;
-}
-#myRound{
-    background: transparent;
-    border: none;
-}
+       
 
       </style>
   </head>
@@ -125,13 +19,13 @@
     <!-- <div style="float: right;">
 
     </div> -->
-    <b style="color: #4CAF50;">Score:</b> <input type="text" id="myScore" value="0">
-     <div class="icon" style="float: Right;margin-right: 1%;"><b style="color: #4CAF50;"> Health: </b>
+    <b style="color: white;font-size: 20px;">Score:</b> <input type="text" id="myScore" value="0">
+     <div class="icon" style="float: Right;margin-right: 1%;"><b style="color: white;"> Health: </b>
         <i class="fa fa-heart" aria-hidden="true" id="heart1"></i>
         <i class="fa fa-heart" aria-hidden="true" id="heart2"></i>
         <i class="fa fa-heart" aria-hidden="true" id="heart3"></i>
     </div>
-    <div id="some_div" style="text-align: center;height: 120px;color: #4CAF50;margin-top: 1%;"><span style="font-family: Monaco;color: #4CAF50;">Timer</span></div>
+    <div id="some_div" style="text-align: center;height: 120px;color: White;margin-top: 1%;"><span style="font-family: Monaco;color: white;">Timer</span></div>
     
     <div class="gridDiv">
         <div class="grid-container">
@@ -141,11 +35,10 @@
             <div class="grid-item"  onclick="fillColor(4)" ></div>  
           </div>
     </div>
-    <div style="text-align: center;"><p><b style="color: #4CAF50;margin-left: 10%;"><b style="font-size: 20px;">Round</b>:</b> <input type="text" id="myRound" value="0"></b></p></div>
-      <div style="text-align:center;  color: #4CAF50;">
+    <div style="text-align: center;"><p><b style="color: white;margin-left: 10%;"><b style="font-size: 20px;">Round</b>:</b> <input type="text" id="myRound" value="0"></b></p></div>
+      <div style="text-align:center;  color: white;">
         <p style="font-family: Brush Script MT;font-size: xx-large;margin-top: 0px;" >
-            <b>Choose Color From below</b>
-        </p>
+            <b>Choose Color From below</b></p>
         <span class="dot" style="background: red;" onclick="pickColor('red')"></span>
         <span class="dot" style="background: green;" onclick="pickColor('green')"></span>
         <span class="dot" style="background: blue;" onclick="pickColor('blue')"></span>
@@ -167,7 +60,25 @@
     color: white;    font-size: xx-large;" onclick="location.href = 'index.html';">Home Page</button>
 
 </div>  
-    
+
+<div class="cloudgroup1">
+    <span id="cloudgroup1a"></span>
+    <span id="cloudgroup1b"></span>
+    <span id="cloudgroup1c"></span>
+  </div>
+  
+  <div class="cloudgroup2">
+    <span id="cloudgroup2a"></span>
+    <span id="cloudgroup2b"></span>
+    <span id="cloudgroup2c"></span>
+  </div>
+  
+  
+  <div class="cloudgroup3">
+    <span id="cloudgroup3a"></span>
+    <span id="cloudgroup3b"></span>
+    <span id="cloudgroup3c"></span>
+  </div>
         
   </body>
   <script>
