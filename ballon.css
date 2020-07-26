@@ -1,0 +1,185 @@
+body{
+    background: linear-gradient(90deg, #ff4466,#004589);
+  }
+  
+  .balloon1{
+    display: inline-block;
+    position: relative;
+    top:-1px;
+    min-height: 16em;
+    min-width: 16em;
+    border-radius:150%;
+    border-bottom-left-radius: 425%;
+    border-bottom-right-radius: 425%;
+    border-top-left-radius: 425%;
+    border-top-radius: 220%;
+    background: linear-gradient(5deg, #00aa88,#004589);
+    transform: rotate(135deg);
+    z-index: 2;
+  }
+  
+  #span1{
+    position: relative;
+    top: -5px;
+    left: 210px;
+    display: inline-block;
+    min-height: 3em;
+    min-width: 3em;
+    border-radius:50%;
+    border-bottom-left-radius: 52%;
+    border-bottom-right-radius: 72%;
+    border-top-left-radius: 72%;
+    border-top-right-radius: 420%;
+    border: 2px solid #D2691E;
+    border-top-color: transparent;
+    border-right-color:transparent;
+    transform: rotate(180deg);
+    z-index: -8;
+  }
+  
+  #span2{
+    position: relative;
+    bottom: 60px;
+    top: -45px;
+    left: 185px;
+    right: 450px;
+    display: inline-block;
+    height: 40px;
+    width: 60px;
+    border: 3px;
+    background-color: #005688;
+    transform: rotate(45deg);
+  }
+  
+  
+  .balloon-container1{
+    animation: balloonmove 35s ease-in-out infinite;
+  }
+  
+  @keyframes balloonmove{
+    0%,100%{
+      transform: translateX(0%);
+      }
+    90%{
+      transform: translateX(90%);
+      }
+  }
+  
+  
+  #cloudgroup1a{
+    position: fixed;
+    top: 55px;
+    left: 120px;
+    display: inline-block;
+    height: 90px;
+    width: 90px;
+    border-radius:0%;
+    border-top-left-radius: 150%;
+    border-bottom-right-radius: 50%;
+    background: linear-gradient(#fff, #d3d3d3);
+      background-color: #fff;
+     z-index: -10;
+  }
+  
+  #cloudgroup1b{
+    position: fixed;
+    top: 10px;
+    left: 190px;
+    display: inline-block;
+    height: 135px;
+    width: 140px;
+    border-radius:0%;
+    border-top-right-radius: 150%;
+    border-top-left-radius: 80%;
+    background: linear-gradient(#fff, #d3d3d3);
+    z-index: -10;
+  }
+  
+  #cloudgroup1c{
+    position: fixed;
+    top: 45px;
+    left: 260px;
+    display: inline-block;
+    height: 100px;
+    width: 110px;
+    border-radius:50%;
+    border-top-right-radius: 150%;
+    border-top-left-radius: 50%;
+    background: linear-gradient(#fff, #d3d3d3);
+    z-index: -10;
+  }
+  
+  
+  #cloudgroup2a{
+    position: fixed;
+    bottom: 95px;
+    right: 110px;
+    display: inline-block;
+    height: 20px;
+    width: 30px;
+    border-radius:100%;
+    border-top-right-radius: 190%;
+    border-top-left-radius: 260%;
+    background: linear-gradient(#adadad, #d3d3d3);
+    z-index: -10;
+  }
+  
+  #cloudgroup2b{
+    position: fixed;
+    bottom: 95px;
+    right: 80px;
+    display: inline-block;
+    height: 35px;
+    width: 40px;
+    border-radius:0%;
+    border-top-right-radius: 150%;
+    border-top-left-radius: 80%;
+    background: linear-gradient(#aaa, #d3d3d3);
+    z-index: -10;
+  }
+  
+  #cloudgroup2c{
+    position: fixed;
+    bottom: 95px;
+    right: 50px;
+    display: inline-block;
+    height: 15px;
+    width: 40px;
+    border-radius:0%;
+    border-top-right-radius: 150%;
+    border-top-left-radius: 80%;
+    background: linear-gradient(#aeaeae, #d3d3d3);
+    z-index: -10;
+  }
+  
+  #cloudgroup3a{
+    position: fixed;
+    bottom: 245px;
+    left: 50px;
+    display: inline-block;
+    height: 65px;
+    width: 100px;
+    border-radius:100%;
+    border-radius:100%;
+    border-top-right-radius: 390%;
+    border-top-left-radius: 360%;
+    border-bottom-left-radius: 360%;
+    border-bottom-right-radius: 360%;
+    background: linear-gradient(#fff, #d3d3d3);
+    z-index: -10;
+  }
+  
+  #cloudgroup3b{
+    position: fixed;
+    bottom: 240px;
+    left: 130px;
+    display: inline-block;
+    height: 55px;
+    width: 50px;
+    border-radius:150%;
+    border-top-right-radius: 150%;
+    border-top-left-radius: 80%;
+    background: linear-gradient(#fff, #d3d3d3);
+    z-index: -15;
+  }
+  
